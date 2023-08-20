@@ -3,10 +3,11 @@ echo Installing LunaBuild!
 mkdir -p ./lunabuild
 onlinerepo="https://raw.githubusercontent.com/LunaWave/lunabuild/resources/"
 builds="https://raw.githubusercontent.com/LunaWave/lunabuild/"
+https://raw.githubusercontent.com/LunaWave/lunabuild/release-1.1/build.sh
 newestversion=$(curl "$onlinerepo"version)
 cd ./lunabuild
-curl "$builds"release-"$newestversion"/build.sh >> ./build.sh
+curl -H "Cache-Control: no-cache" https://raw.githubusercontent.com/LunaWave/lunabuild/release-"$newestversion"/build.sh >> ./build.sh
 chmod +x ./build.sh
-./build.sh &
+./build.sh
 cd ..
 rm "$0"
