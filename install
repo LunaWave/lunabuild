@@ -1,11 +1,5 @@
 #!/bin/bash
 echo Installing LunaBuild!
-if curl -Is https://www.google.com | head -n 1 | grep -q 200; then
-  internet=true
-else
-  echo "You need internet to install this."
-  exit
-fi
 mkdir -p ./lunabuild
 onlinerepo="https://raw.githubusercontent.com/LunaWave/lunabuild/resources/"
 builds="https://raw.githubusercontent.com/LunaWave/lunabuild/"
