@@ -49,11 +49,11 @@ logs=(
 getonlinedata() {
   log " Getting online data..."
   onlinerepo="https://raw.githubusercontent.com/LunaWave/lunabuild/resources/"
-  welcome=$(curl -s "$onlinerepo"welcome || "Hello and welcome to LunaWave! (Couldn't receive the online welcome message. :'(")
-  newestversion=$(curl "$onlinerepo"version || "Unable to receive the newest version.")
+  welcome=$(curl -H "Cache-Control: no-cache" -s "$onlinerepo"welcome || "Hello and welcome to LunaWave! (Couldn't receive the online welcome message. :'(")
+  newestversion=$(curl -H "Cache-Control: no-cache" "$onlinerepo"version || "Unable to receive the newest version.")
   if [ "$internet" = true ]; then
       rm -r ./.lunabuild/help.txt
-      curl "$onlinerepo"help"$version" >> ./.lunabuild/help.txt   
+      curl -H "Cache-Control: no-cache" "$onlinerepo"help"$version" >> ./.lunabuild/help.txt   
   else
       log "No internet connection so online data not gathered."
   fi
@@ -413,4 +413,3 @@ log " - > - > END < - < -"
 for index in "${!logs[@]}"; do
     echo "${logs[index]}" >> ./"$log_file"
 done
-
