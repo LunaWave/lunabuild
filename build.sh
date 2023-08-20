@@ -213,6 +213,7 @@ for arg in "$@"; do
         rm -r ./temp
         exit
     elif [ "$arg" = "-w" ]; then
+        rm -r ./temp
         clear
         print "\t\t~LunaBuild~" "magenta" "blue" "bold"
         print "\t     Powered by Bash ♥     " "cyan" "*" "blink"
