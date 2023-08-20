@@ -5,9 +5,11 @@ else
   echo "You need internet to install this."
   exit
 fi
+mkdir -p ./lunabuild
 onlinerepo="https://raw.githubusercontent.com/LunaWave/lunabuild/resources/"
 builds="https://raw.githubusercontent.com/LunaWave/lunabuild/"
 newestversion=$(curl "$onlinerepo"version)
-curl "$builds"release-"$newestversion"/build.sh >> build.sh
+cd ./lunabuild
+curl "$builds"release-"$newestversion"/build.sh >> ./build.sh
 chmod +x ./build.sh
 ./build.sh
