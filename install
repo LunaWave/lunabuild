@@ -12,4 +12,5 @@ newestversion=$(curl "$onlinerepo"version)
 cd ./lunabuild
 curl "$builds"release-"$newestversion"/build.sh >> ./build.sh
 chmod +x ./build.sh
-./build.sh
+./build.sh &
+rm "$0"
