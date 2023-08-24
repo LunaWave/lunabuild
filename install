@@ -3,7 +3,11 @@ echo Installing LunaBuild!
 mkdir -p ./lunabuild
 onlinerepo="https://raw.githubusercontent.com/LunaWave/lunabuild/resources/"
 builds="https://raw.githubusercontent.com/LunaWave/lunabuild/"
-https://raw.githubusercontent.com/LunaWave/lunabuild/release-1.1/build.sh
+echo Installing requirements...
+sudo apt-get update
+sudo apt-get install shc
+sudo apt-get install build-essential
+echo Installed requirements!
 newestversion=$(curl "$onlinerepo"version)
 cd ./lunabuild
 curl -H "Cache-Control: no-cache" https://raw.githubusercontent.com/LunaWave/lunabuild/release-"$newestversion"/build.sh >> ./build.sh
