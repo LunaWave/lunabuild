@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=1.1
+version=1.2
 
   ###########################################################
   #                                                         #
@@ -275,6 +275,8 @@ for arg in "$@"; do
             echo "$run_lower"
         fi
       elif [ "$arg" = "-v" ]; then
+        getonlinedata
+        clear
         echo
         print "\t\t~LunaBuild~" "magenta" "blue" "bold"
         print "\t     Powered by Bash ♥     " "cyan" "*" "blink"
