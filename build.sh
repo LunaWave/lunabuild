@@ -253,7 +253,6 @@ for arg in "$@"; do
         echo 
         print "$(cat ./.lunabuild/help.txt)" "green" "" "bold"
         echo 
-        listdeps
         exit
     elif [ "$arg" = "-vd" ]; then
         listdeps
