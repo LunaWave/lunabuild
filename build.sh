@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=1.2
+version=1.1
 
   ###########################################################
   #                                                         #
@@ -281,6 +281,7 @@ for arg in "$@"; do
         divd
         print "       Version -=> $version      " "green" "black" "bold"
         print "Newest Version -=> $newestversion      " "green" "black" "bold"
+        exit
     fi
     ifargs=true
 done
